@@ -123,6 +123,23 @@ export const exercises: Exercise[] = [
     videoUrl: 'https://ik.imagekit.io/x6cjipsih/Master%20bicep%20curls%20technique%20to%20unlock%20peak%20gainsFOLLOW%20FOR%20MKRE%20TUTORIALS!!!_workouts%20_workout%20.mp4?updatedAt=1760788578793',
   },
   {
+    id: 'triceps-extensions',
+    name: 'Triceps Extensions',
+    bodyPart: 'Arms',
+    sets: 3,
+    reps: '10-15',
+    instructions: [
+      'Lie on a flat bench holding an EZ bar or two dumbbells above your chest.',
+      'Keeping your upper arms stationary, lower the weight by bending your elbows.',
+      'Continue until the weight is just above your forehead.',
+      'Press the weight back up to the starting position, extending your arms.',
+      'Repeat for the desired number of repetitions.',
+    ],
+    reelUrls: [],
+    image: 'triceps-extensions-image',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/Stop%20doing%20Lying%20Triceps%20Extensions%20wrong%20%E2%9D%8CMost%20people%20make%20these%203%20mistakes-Elbows%20flaring%20out%20.mp4?updatedAt=1760789531711',
+  },
+  {
     id: 'abdominal-training',
     name: 'Abdominal Training',
     bodyPart: 'Core',
