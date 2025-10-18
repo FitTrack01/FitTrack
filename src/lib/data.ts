@@ -88,7 +88,7 @@ export const exercises: Exercise[] = [
    {
     id: 'deadlift',
     name: 'Deadlift',
-    bodyPart: 'Legs',
+    bodyPart: 'Back',
     sets: 4,
     reps: '5-8',
     instructions: [
