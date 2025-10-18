@@ -35,22 +35,6 @@ export const exercises: Exercise[] = [
     image: 'bench-press-image',
     videoUrl: 'https://ik.imagekit.io/x6cjipsih/_gym%20_fitness%20_workout%20_excercise%20_instagood%20_instagram%20_viral%20_reels%20_instagym%20_motivation.mp4?updatedAt=1760781858219',
   },
-    {
-    id: 'pull-up',
-    name: 'Pull Up',
-    bodyPart: 'Back',
-    sets: 3,
-    reps: '6-10',
-    instructions: [
-      'Grab the pull-up bar with your palms facing away from you.',
-      'Hang from the bar with your arms fully extended.',
-      'Pull your body up until your chin is above the bar.',
-      'Lower your body back down to the starting position.',
-      'Repeat.',
-    ],
-    reelUrls: ['https://www.instagram.com/reel/C3bO4k_IE8A/', 'https://www.instagram.com/reel/C4p_3iYyUTp/'],
-    image: 'pull-up-image',
-  },
   {
     id: 'lat-pulldown',
     name: 'Lat Pulldown',
