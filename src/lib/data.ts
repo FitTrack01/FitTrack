@@ -122,8 +122,8 @@ export const exercises: Exercise[] = [
     videoUrl: 'https://ik.imagekit.io/x6cjipsih/_sixpack%20_excercise%20_workout%20_gym%20_viral%20_instagram%20_fitness%20_instagood%20_viral%20_motivation%20_inst.mp4?updatedAt=1760787788895',
   },
   {
-    id: 'overhead-press',
-    name: 'Overhead Press',
+    id: 'shoulder-press',
+    name: 'Shoulder Press',
     bodyPart: 'Shoulders',
     sets: 4,
     reps: '8-10',
@@ -135,7 +135,7 @@ export const exercises: Exercise[] = [
         'Repeat.',
     ],
     reelUrls: ['https://www.instagram.com/reel/C39eN0eLd9d/', 'https://www.instagram.com/reel/C4Xg3h_ruJd/'],
-    image: 'overhead-press-image',
+    image: 'shoulder-press-image',
   },
 ];
 
