@@ -83,6 +83,7 @@ export const exercises: Exercise[] = [
     ],
     reelUrls: ['https://www.instagram.com/reel/C5_soA4S0yF/', 'https://www.instagram.com/reel/C6O-gD6S-yP/'],
     image: 'squat-image',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/Exersise%20for%20bigner_gym%20_fitness%20_workout%20_instagram%20_instagood%20_excercise%20_viral%20_reels%20_motiva.mp4?updatedAt=1760787404453',
   },
   {
     id: 'bicep-curl',
