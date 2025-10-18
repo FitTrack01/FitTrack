@@ -14,7 +14,7 @@ export const exercises: Exercise[] = [
     ],
     reelUrls: ['https://www.instagram.com/reel/C2M0X4_xN9j/', 'https://www.instagram.com/reel/C6i3eJdIUXA/'],
     image: 'push-up-image',
-    videoUrl: 'https://screenapp.io/app/v/l7wMNZkWDk',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/Push%20up%20best%20exercises%203d%20animation%20video%20idea%20_%20_workout%20_excercise%20_gym%20_fitness%20_reels%20_inst.mp4?updatedAt=1760782082699',
   },
   {
     id: 'bench-press',
