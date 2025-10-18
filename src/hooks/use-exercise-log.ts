@@ -36,5 +36,5 @@ export function useExerciseLog() {
 
   const isCompleted = useCallback((exerciseId: string) => !!log[exerciseId], [log]);
 
-  return { isLoaded, isCompleted, toggleComplete };
+  return { isLoaded, isCompleted, toggleComplete, log };
 }
