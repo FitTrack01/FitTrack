@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'FitFlow',
+  title: 'FitTrack',
   description: 'Your daily fitness companion to track exercises and stay motivated.',
 };
 

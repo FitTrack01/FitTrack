@@ -49,7 +49,7 @@ export function NotificationButton() {
                 title: "Notifications Enabled!",
                 description: "You'll receive reminders for your workouts. Great job!",
             });
-             new Notification("FitFlow Reminders", {
+             new Notification("FitTrack Reminders", {
                 body: "Thanks for enabling notifications! We'll help you stay on track.",
             });
         } else {

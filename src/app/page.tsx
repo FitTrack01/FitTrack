@@ -11,7 +11,7 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh bg-background">
       <header className="p-4 sm:p-6">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tighter text-primary font-headline">
-          FitFlow
+          FitTrack
         </h1>
         <p className="text-muted-foreground mt-2 text-lg">
           Your daily fitness companion.

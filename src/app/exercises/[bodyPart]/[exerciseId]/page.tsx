@@ -10,7 +10,7 @@ type Props = {
 
 export function generateMetadata({ params }: Props): Metadata {
   const exercise = getExerciseById(params.exerciseId);
-  const title = exercise ? `${exercise.name} | FitFlow` : 'FitFlow';
+  const title = exercise ? `${exercise.name} | FitTrack` : 'FitTrack';
 
   return {
     title,

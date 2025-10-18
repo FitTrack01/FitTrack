@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 
-const STORAGE_KEY = 'fitflow-exercise-log';
+const STORAGE_KEY = 'fittrack-exercise-log';
 
 type ExerciseLog = Record<string, boolean>;
 
