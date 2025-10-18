@@ -37,12 +37,6 @@
       "imageHint": "bicep curl"
     },
     {
-      "id": "abdominal-crunches-image",
-      "description": "A person doing abdominal crunches",
-      "imageUrl": "https://images.unsplash.com/photo-1571019614242-c5c5792c4866?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhYmRvbWluYWwlMjBjcnVuY2hlc3xlbnwwfHx8fDE3NjA4NzU0ODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "abdominal crunches"
-    },
-    {
       "id": "abdominal-training-image",
       "description": "A person doing abdominal training",
       "imageUrl": "https://images.unsplash.com/photo-1526401485004-469102124874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhYmRvbWluYWwlMjB0cmFpbmluZ3xlbnwwfHx8fDE3NjA4NzU4ODV8MA&ixlib=rb-4.1.0&q=80&w=1080",

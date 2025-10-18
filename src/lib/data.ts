@@ -101,22 +101,6 @@ export const exercises: Exercise[] = [
     reelUrls: ['https://www.instagram.com/reel/C2s4Z_fLqG0/', 'https://www.instagram.com/reel/C6QW_R_rT_m/'],
     image: 'bicep-curl-image',
   },
-    {
-    id: 'abdominal-crunches',
-    name: 'Abdominal Crunches',
-    bodyPart: 'Core',
-    sets: 3,
-    reps: '15-20',
-    instructions: [
-        'Lie on your back with your knees bent and feet flat on the floor.',
-        'Place your hands behind your head or across your chest.',
-        'Lift your head and shoulders off the floor, engaging your core.',
-        'Lower back down with control.',
-        'Repeat for the desired number of repetitions.',
-    ],
-    reelUrls: [],
-    image: 'abdominal-crunches-image',
-  },
   {
     id: 'abdominal-training',
     name: 'Abdominal Training',
