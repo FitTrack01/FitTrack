@@ -8,8 +8,10 @@ import { useEffect, useState } from "react";
 export function NotificationButton() {
     const { toast } = useToast();
     const [permission, setPermission] = useState<"default" | "denied" | "granted">("default");
+    const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
+        setIsClient(true);
         if ("Notification" in window) {
             setPermission(Notification.permission);
         }
@@ -60,8 +62,8 @@ export function NotificationButton() {
         }
     }
 
-    if (permission === 'granted' || typeof window === 'undefined' || !('Notification' in window)) {
-        return null; // Don't show the button if already granted or not supported
+    if (!isClient || permission === 'granted' || !('Notification' in window)) {
+        return null;
     }
 
     return (
