@@ -52,6 +52,22 @@ export const exercises: Exercise[] = [
     image: 'pull-up-image',
   },
   {
+    id: 'lat-pulldown',
+    name: 'Lat Pulldown',
+    bodyPart: 'Back',
+    sets: 3,
+    reps: '10-12',
+    instructions: [
+      'Sit down on the lat pulldown machine and secure your knees under the pads.',
+      'Grasp the bar with a wide grip, palms facing forward.',
+      'Lean back slightly and pull the bar down to your upper chest, squeezing your back muscles.',
+      'Slowly return the bar to the starting position with controlled movement.',
+      'Repeat for the desired number of repetitions.',
+    ],
+    reelUrls: ['https://www.instagram.com/reel/C3t_oJ3SBrF/', 'https://www.instagram.com/reel/C6f5eP2S2b1/'],
+    image: 'lat-pulldown-image',
+  },
+  {
     id: 'squat',
     name: 'Squat',
     bodyPart: 'Legs',

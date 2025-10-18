@@ -19,6 +19,12 @@
       "imageHint": "pull-up calisthenics"
     },
     {
+      "id": "lat-pulldown-image",
+      "description": "A person doing a lat pulldown",
+      "imageUrl": "https://images.unsplash.com/photo-1594498881268-3f5a0a38325a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYXQlMjBwdWxsZG93bnxlbnwwfHx8fDE3NjA3ODY3NDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lat pulldown"
+    },
+    {
       "id": "squat-image",
       "description": "A person performing a squat",
       "imageUrl": "https://images.unsplash.com/photo-1539267902239-d1fc8148afa2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzcXVhdCUyMGxlZ2RheXxlbnwwfHx8fDE3NjA3ODA5NTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
