@@ -67,7 +67,7 @@ export const exercises: Exercise[] = [
     ],
     reelUrls: ['https://www.instagram.com/reel/C5_soA4S0yF/', 'https://www.instagram.com/reel/C6O-gD6S-yP/'],
     image: 'squat-image',
-    videoUrl: 'https://ik.imagekit.io/x6cjipsih/Exersise%20for%20bigner_gym%20_fitness%20_workout%20_instagram%20_instagood%20_excercise%20_viral%20_reels%20_motiva.mp4?updatedAt=1760787404453',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/Exersise%20for%20bigner_gym%20_fitness%20_workout%20_instagram%20_instagood%20_excercise%E2%80%8C%20_viral%20_reels%20_motiva.mp4?updatedAt=1760787404453',
   },
    {
     id: 'deadlift',
@@ -85,6 +85,7 @@ export const exercises: Exercise[] = [
     ],
     reelUrls: ['https://www.instagram.com/reel/C6a_oX9SeG_/', 'https://www.instagram.com/reel/C5p4f_mSg-d/'],
     image: 'deadlift-image',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/IS%20YOUR%20BACK%20NOT%20GROWING%20Master%20the%20deadlift%20with%20proper%20form%20to%20build%20strength,%20power,%20and%20musc.mp4?updatedAt=1760788216325',
   },
   {
     id: 'bicep-curl',
