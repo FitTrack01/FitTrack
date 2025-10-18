@@ -26,7 +26,7 @@ export const exercises: Exercise[] = [
       'Lower the bar to your mid-chest.',
       'Push the bar back up until your arms are fully extended.',
     ],
-    reelUrls: ['https://www.instagram.com/reel/DLEARYSTG0_/', 'https://www.instagram.com/reel/C5y4eXzSAmE/'],
+    reelUrls: ['https://www.instagram.com/reel/DLEARYSTG0_/?igsh=MTl1eWJqOHBzb2h6MQ==', 'https://www.instagram.com/reel/C5y4eXzSAmE/'],
     image: 'bench-press-image',
   },
     {
