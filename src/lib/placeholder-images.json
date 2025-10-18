@@ -1,3 +1,52 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "push-up-image",
+      "description": "A person doing push-ups",
+      "imageUrl": "https://images.unsplash.com/photo-1599744331048-d58b430fb098?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwdXNodXAlMjBmaXRuZXNzfGVufDB8fHx8MTc2MDc4MDk1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pushup fitness"
+    },
+    {
+      "id": "bench-press-image",
+      "description": "A person doing a bench press",
+      "imageUrl": "https://images.unsplash.com/photo-1690731033723-ad718c6e585a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxiZW5jaCUyMHByZXNzfGVufDB8fHx8MTc2MDczOTYwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bench press"
+    },
+    {
+      "id": "pull-up-image",
+      "description": "A person doing a pull-up",
+      "imageUrl": "https://images.unsplash.com/photo-1758521959601-0f0921643bf0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwdWxsLXVwJTIwY2FsaXN0aGVuaWNzfGVufDB8fHx8MTc2MDc4MDk1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pull-up calisthenics"
+    },
+    {
+      "id": "squat-image",
+      "description": "A person performing a squat",
+      "imageUrl": "https://images.unsplash.com/photo-1539267902239-d1fc8148afa2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzcXVhdCUyMGxlZ2RheXxlbnwwfHx8fDE3NjA3ODA5NTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "squat legday"
+    },
+    {
+      "id": "bicep-curl-image",
+      "description": "A person doing a bicep curl",
+      "imageUrl": "https://images.unsplash.com/photo-1704223523183-cc0ef35cb671?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiaWNlcCUyMGN1cmx8ZW58MHx8fHwxNzYwNzM5NjA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bicep curl"
+    },
+    {
+      "id": "plank-image",
+      "description": "A person holding a plank position",
+      "imageUrl": "https://images.unsplash.com/photo-1646006409295-f1b05e7200f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwbGFuayUyMGNvcmV8ZW58MHx8fHwxNzYwNzc2MTg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "plank core"
+    },
+    {
+      "id": "overhead-press-image",
+      "description": "A person doing an overhead press",
+      "imageUrl": "https://images.unsplash.com/photo-1553601700-1d20bf04c610?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxvdmVyaGVhZCUyMHByZXNzfGVufDB8fHx8MTc2MDczOTYwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "overhead press"
+    },
+    {
+      "id": "video-placeholder",
+      "description": "A placeholder for an exercise video",
+      "imageUrl": "https://images.unsplash.com/photo-1758521961236-38a86c00f1bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmaXRuZXNzJTIwdmlkZW98ZW58MHx8fHwxNzYwNzgwOTUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fitness video"
+    }
+  ]
 }
