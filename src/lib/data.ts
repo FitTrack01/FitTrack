@@ -136,6 +136,7 @@ export const exercises: Exercise[] = [
     ],
     reelUrls: ['https://www.instagram.com/reel/C39eN0eLd9d/', 'https://www.instagram.com/reel/C4Xg3h_ruJd/'],
     image: 'shoulder-press-image',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/_Smith%20Shoulder%20Press-%20Are%20You%20Doing%20This%20Correctly__.mp4?updatedAt=1760788880414',
   },
 ];
 
