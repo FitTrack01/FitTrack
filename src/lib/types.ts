@@ -8,4 +8,5 @@ export type Exercise = {
   instructions: string[];
   reelUrls: string[];
   image: string;
+  videoUrl?: string;
 };

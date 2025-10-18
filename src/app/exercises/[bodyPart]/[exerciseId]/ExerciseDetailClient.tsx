@@ -13,6 +13,7 @@ import { Separator } from '@/components/ui/separator';
 
 export function ExerciseDetailClient({ exercise }: { exercise: Exercise }) {
   const videoPlaceholder = PlaceHolderImages.find(img => img.id === 'video-placeholder');
+  const embedUrl = exercise.videoUrl ? exercise.videoUrl.replace('/v/', '/e/') : null;
   
   return (
     <div className="flex flex-col min-h-dvh bg-background">
@@ -32,20 +33,32 @@ export function ExerciseDetailClient({ exercise }: { exercise: Exercise }) {
             <h2 id="video-instruction" className="sr-only">Video Instruction</h2>
             <Card className="overflow-hidden shadow-lg">
               <CardContent className="p-0 aspect-video relative flex items-center justify-center bg-black">
-                {videoPlaceholder && (
-                  <Image 
-                    src={videoPlaceholder.imageUrl} 
-                    alt="Video placeholder"
-                    fill
-                    style={{objectFit: 'cover'}}
-                    className="opacity-50"
-                    data-ai-hint={videoPlaceholder.imageHint}
-                  />
+                {embedUrl ? (
+                   <iframe
+                    src={embedUrl}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="Exercise Video"
+                  ></iframe>
+                ) : (
+                  <>
+                    {videoPlaceholder && (
+                      <Image 
+                        src={videoPlaceholder.imageUrl} 
+                        alt="Video placeholder"
+                        fill
+                        style={{objectFit: 'cover'}}
+                        className="opacity-50"
+                        data-ai-hint={videoPlaceholder.imageHint}
+                      />
+                    )}
+                    <PlayCircle className="h-20 w-20 text-white/70 absolute" />
+                    <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-md">
+                        <p>Video instructions coming soon</p>
+                    </div>
+                  </>
                 )}
-                <PlayCircle className="h-20 w-20 text-white/70 absolute" />
-                <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-md">
-                    <p>Video instructions coming soon</p>
-                </div>
               </CardContent>
             </Card>
           </section>

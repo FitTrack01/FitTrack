@@ -14,6 +14,7 @@ export const exercises: Exercise[] = [
     ],
     reelUrls: ['https://www.instagram.com/reel/C2M0X4_xN9j/', 'https://www.instagram.com/reel/C6i3eJdIUXA/'],
     image: 'push-up-image',
+    videoUrl: 'https://screenapp.io/app/v/l7wMNZkWDk',
   },
   {
     id: 'bench-press',
