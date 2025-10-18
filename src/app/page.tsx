@@ -21,9 +21,9 @@ export default function Home() {
       <main className="flex-1 px-4 space-y-8">
         <Tabs defaultValue="exercises" className="w-full max-w-2xl mx-auto">
           <TabsList className="grid w-full grid-cols-3 mb-6">
-            <TabsTrigger value="exercises">Exercises to do</TabsTrigger>
-            <TabsTrigger value="completed">Completed</TabsTrigger>
-            <TabsTrigger value="history">History</TabsTrigger>
+            <TabsTrigger value="exercises" className="text-base py-2">Exercises to do</TabsTrigger>
+            <TabsTrigger value="completed" className="text-base py-2">Completed</TabsTrigger>
+            <TabsTrigger value="history" className="text-base py-2">History</TabsTrigger>
           </TabsList>
           <TabsContent value="exercises">
             <section id="exercises-to-do">
