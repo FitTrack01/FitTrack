@@ -4,7 +4,8 @@ import { useState, useEffect, useCallback } from 'react';
 
 const STORAGE_KEY = 'fittrack-exercise-log';
 
-type ExerciseLog = Record<string, boolean>;
+// Stores the completion date as an ISO string
+export type ExerciseLog = Record<string, string>;
 
 export function useExerciseLog() {
   const [log, setLog] = useState<ExerciseLog>({});
@@ -24,7 +25,13 @@ export function useExerciseLog() {
 
   const toggleComplete = useCallback((exerciseId: string) => {
     setLog(prevLog => {
-      const newLog = { ...prevLog, [exerciseId]: !prevLog[exerciseId] };
+      const newLog = { ...prevLog };
+      if (newLog[exerciseId]) {
+        delete newLog[exerciseId];
+      } else {
+        newLog[exerciseId] = new Date().toISOString();
+      }
+      
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(newLog));
       } catch (error) {

@@ -3,8 +3,9 @@ import { bodyParts, type BodyPart } from '@/lib/types';
 import { getIconForBodyPart } from '@/components/icons';
 import { ArrowRight } from 'lucide-react';
 import { NotificationButton } from '@/components/NotificationButton';
-import { ExerciseTracking } from '@/components/ExerciseTracking';
+import { CompletedExercises } from '@/components/CompletedExercises';
 import { Separator } from '@/components/ui/separator';
+import { TrackingHistory } from '@/components/TrackingHistory';
 
 export default function Home() {
   return (
@@ -47,11 +48,20 @@ export default function Home() {
 
         <Separator />
         
-        <section id="exercise-tracking" className="pb-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-6">Exercise Tracking</h2>
+        <section id="completed-exercises" className="pb-6">
+          <h2 className="text-3xl font-bold tracking-tight mb-6">Completed Exercises</h2>
           <div className="w-full max-w-2xl mx-auto">
-            <ExerciseTracking />
+            <CompletedExercises />
           </div>
+        </section>
+
+        <Separator />
+
+        <section id="tracking-history" className="pb-12">
+            <h2 className="text-3xl font-bold tracking-tight mb-6">Tracking History</h2>
+            <div className="w-full max-w-2xl mx-auto">
+              <TrackingHistory />
+            </div>
         </section>
 
       </main>
