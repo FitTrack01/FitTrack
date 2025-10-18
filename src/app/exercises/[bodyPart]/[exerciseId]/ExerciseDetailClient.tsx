@@ -6,7 +6,7 @@ import type { Exercise } from '@/lib/types';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Check, PlayCircle } from 'lucide-react';
+import { ArrowLeft, Check, PlayCircle, Repeat, Target } from 'lucide-react';
 import { CompletionCheckbox } from '@/components/CompletionCheckbox';
 import { ReelsCarousel } from '@/components/ReelsCarousel';
 import { Separator } from '@/components/ui/separator';
@@ -83,6 +83,26 @@ export function ExerciseDetailClient({ exercise }: { exercise: Exercise }) {
           <section aria-labelledby="exercise-tracking">
             <h2 id="exercise-tracking" className="sr-only">Track Exercise Completion</h2>
             <CompletionCheckbox exerciseId={exercise.id} exerciseName={exercise.name} />
+          </section>
+          
+          <section aria-labelledby="sets-and-reps">
+            <h2 id="sets-and-reps" className="sr-only">Sets and Reps</h2>
+            <div className="grid grid-cols-2 gap-4 text-center">
+              <Card className="p-4 shadow-sm">
+                <CardContent className="p-0 flex flex-col gap-2 items-center justify-center">
+                  <Repeat className="h-7 w-7 text-primary" />
+                  <p className="text-3xl font-bold">{exercise.sets}</p>
+                  <p className="text-muted-foreground font-semibold">Sets</p>
+                </CardContent>
+              </Card>
+               <Card className="p-4 shadow-sm">
+                <CardContent className="p-0 flex flex-col gap-2 items-center justify-center">
+                  <Target className="h-7 w-7 text-accent" />
+                  <p className="text-3xl font-bold">{exercise.reps}</p>
+                  <p className="text-muted-foreground font-semibold">Reps</p>
+                </CardContent>
+              </Card>
+            </div>
           </section>
 
           <Separator />

@@ -9,4 +9,6 @@ export type Exercise = {
   reelUrls: string[];
   image: string;
   videoUrl?: string;
+  sets: number;
+  reps: string;
 };

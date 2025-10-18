@@ -5,6 +5,8 @@ export const exercises: Exercise[] = [
     id: 'push-up',
     name: 'Push Up',
     bodyPart: 'Chest',
+    sets: 3,
+    reps: '15-20',
     instructions: [
       'Get down on all fours, placing your hands slightly wider than your shoulders.',
       'Straighten your arms and legs.',
@@ -20,6 +22,8 @@ export const exercises: Exercise[] = [
     id: 'bench-press',
     name: 'Bench Press',
     bodyPart: 'Chest',
+    sets: 4,
+    reps: '8-12',
     instructions: [
       'Lie flat on a bench with your feet firmly on the ground.',
       'Grip the barbell with hands slightly wider than shoulder-width apart.',
@@ -35,6 +39,8 @@ export const exercises: Exercise[] = [
     id: 'pull-up',
     name: 'Pull Up',
     bodyPart: 'Back',
+    sets: 3,
+    reps: '6-10',
     instructions: [
       'Grab the pull-up bar with your palms facing away from you.',
       'Hang from the bar with your arms fully extended.',
@@ -49,6 +55,8 @@ export const exercises: Exercise[] = [
     id: 'squat',
     name: 'Squat',
     bodyPart: 'Legs',
+    sets: 4,
+    reps: '10-12',
     instructions: [
         'Stand with your feet shoulder-width apart.',
         'Keep your chest up and core engaged.',
@@ -63,6 +71,8 @@ export const exercises: Exercise[] = [
     id: 'bicep-curl',
     name: 'Bicep Curl',
     bodyPart: 'Arms',
+    sets: 3,
+    reps: '10-15',
     instructions: [
         'Stand or sit holding a dumbbell in each hand with an underhand grip.',
         'Keep your elbows close to your torso.',
@@ -77,6 +87,8 @@ export const exercises: Exercise[] = [
     id: 'plank',
     name: 'Plank',
     bodyPart: 'Core',
+    sets: 3,
+    reps: '30-60 seconds',
     instructions: [
         'Start in a push-up position, but with your weight on your forearms instead of your hands.',
         'Your body should form a straight line from your shoulders to your ankles.',
@@ -90,6 +102,8 @@ export const exercises: Exercise[] = [
     id: 'overhead-press',
     name: 'Overhead Press',
     bodyPart: 'Shoulders',
+    sets: 4,
+    reps: '8-10',
     instructions: [
         'Stand with the barbell on your front shoulders, hands slightly wider than shoulder-width.',
         'Press the bar overhead until your arms are fully extended.',
