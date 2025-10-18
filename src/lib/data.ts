@@ -189,6 +189,23 @@ export const exercises: Exercise[] = [
     image: 'traps-image',
     videoUrl: 'https://ik.imagekit.io/x6cjipsih/_Safe%20&%20Strong-%20How%20to%20Train%20Traps%20the%20Right%20Way__.mp4?updatedAt=1760789781900',
   },
+  {
+    id: 'leg-extension',
+    name: 'Leg Extension',
+    bodyPart: 'Legs',
+    sets: 3,
+    reps: '12-15',
+    instructions: [
+      'Sit on the leg extension machine with your back against the backrest.',
+      'Place your shins under the padded bar.',
+      'Extend your legs to lift the weight until they are straight.',
+      'Hold the contraction for a moment.',
+      'Slowly lower the weight back to the starting position.',
+    ],
+    reelUrls: [],
+    image: 'leg-extension-image',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/%E2%9C%85%20Perfect%20Your%20Leg%20Extension%20Form%20_%20Stop%20Wasting%20Reps!%20__LegExtensionTips%20_LegExtensionForm%20_Le.mp4?updatedAt=1760790085321',
+  },
 ];
 
 export function getExercisesByBodyPart(bodyPart: BodyPart): Exercise[] {
