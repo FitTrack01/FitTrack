@@ -8,7 +8,7 @@ type Props = {
   params: { bodyPart: string, exerciseId: string };
 };
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const exercise = getExerciseById(params.exerciseId);
   const title = exercise ? `${exercise.name} | FitTrack` : 'FitTrack';
 
