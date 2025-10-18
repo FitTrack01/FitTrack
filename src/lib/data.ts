@@ -66,6 +66,7 @@ export const exercises: Exercise[] = [
     ],
     reelUrls: ['https://www.instagram.com/reel/C3t_oJ3SBrF/', 'https://www.instagram.com/reel/C6f5eP2S2b1/'],
     image: 'lat-pulldown-image',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/_gym%20_workout%20_excercise%20_.mp4?updatedAt=1760787280917',
   },
   {
     id: 'squat',
