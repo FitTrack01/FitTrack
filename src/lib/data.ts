@@ -85,6 +85,23 @@ export const exercises: Exercise[] = [
     image: 'squat-image',
     videoUrl: 'https://ik.imagekit.io/x6cjipsih/Exersise%20for%20bigner_gym%20_fitness%20_workout%20_instagram%20_instagood%20_excercise%20_viral%20_reels%20_motiva.mp4?updatedAt=1760787404453',
   },
+   {
+    id: 'deadlift',
+    name: 'Deadlift',
+    bodyPart: 'Legs',
+    sets: 4,
+    reps: '5-8',
+    instructions: [
+        'Stand with your mid-foot under the barbell.',
+        'Bend over and grab the bar with a shoulder-width grip.',
+        'Bend your knees until your shins touch the bar.',
+        'Lift your chest up and straighten your lower back.',
+        'Take a big breath, hold it, and stand up with the weight.',
+        'Return the weight to the floor by moving your hips back first, then bending your knees.'
+    ],
+    reelUrls: ['https://www.instagram.com/reel/C6a_oX9SeG_/', 'https://www.instagram.com/reel/C5p4f_mSg-d/'],
+    image: 'deadlift-image',
+  },
   {
     id: 'bicep-curl',
     name: 'Bicep Curl',
