@@ -13,7 +13,17 @@ import { Separator } from '@/components/ui/separator';
 
 export function ExerciseDetailClient({ exercise }: { exercise: Exercise }) {
   const videoPlaceholder = PlaceHolderImages.find(img => img.id === 'video-placeholder');
-  const embedUrl = exercise.videoUrl ? exercise.videoUrl.replace('/v/', '/e/') : null;
+  
+  const isInstagramReel = exercise.videoUrl && exercise.videoUrl.includes('instagram.com/reel/');
+  const isDirectVideo = exercise.videoUrl && (exercise.videoUrl.endsWith('.mp4') || exercise.videoUrl.includes('imagekit.io'));
+  const isEmbeddable = exercise.videoUrl && !isInstagramReel && !isDirectVideo; // for things like screenapp
+  
+  let embedUrl: string | null = null;
+  if (isInstagramReel) {
+    embedUrl = exercise.videoUrl!.replace('/reel/', '/embed/');
+  } else if (isEmbeddable) {
+    embedUrl = exercise.videoUrl!;
+  }
   
   return (
     <div className="flex flex-col min-h-dvh bg-background">
@@ -33,7 +43,14 @@ export function ExerciseDetailClient({ exercise }: { exercise: Exercise }) {
             <h2 id="video-instruction" className="sr-only">Video Instruction</h2>
             <Card className="overflow-hidden shadow-lg">
               <CardContent className="p-0 aspect-video relative flex items-center justify-center bg-black">
-                {embedUrl ? (
+                {isDirectVideo ? (
+                  <video
+                    src={exercise.videoUrl}
+                    controls
+                    className="w-full h-full"
+                    title="Exercise Video"
+                  />
+                ) : embedUrl ? (
                    <iframe
                     src={embedUrl}
                     className="w-full h-full"

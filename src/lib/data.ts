@@ -29,6 +29,7 @@ export const exercises: Exercise[] = [
     ],
     reelUrls: ['https://www.instagram.com/reel/DLEARYSTG0_/?igsh=MTl1eWJqOHBzb2h6MQ==', 'https://www.instagram.com/reel/C5y4eXzSAmE/'],
     image: 'bench-press-image',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/_gym%20_fitness%20_workout%20_excercise%20_instagood%20_instagram%20_viral%20_reels%20_instagym%20_motivation.mp4?updatedAt=1760781858219',
   },
     {
     id: 'pull-up',
