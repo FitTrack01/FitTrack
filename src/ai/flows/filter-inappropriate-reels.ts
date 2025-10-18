@@ -48,9 +48,14 @@ Consider reels inappropriate if they contain:
 - Violence or harmful activities
 - Promotion of illegal substances
 
+Each reel URL may contain tracking parameters (like ?igsh=...). When you return the safe reels, please preserve the full original URL including these parameters.
+
 Return ONLY the list of safe reels. Do not say anything else.
 
-Reels to review: {{{reels}}}
+Reels to review:
+{{#each reels}}
+- {{{this}}}
+{{/each}}
 `,
 });
 
@@ -61,7 +66,23 @@ const filterInappropriateReelsFlow = ai.defineFlow(
     outputSchema: FilterInappropriateReelsOutputSchema,
   },
   async input => {
-    const {output} = await prompt(input);
-    return output!;
+    // Before sending to the AI, strip tracking params to get a clean URL for better processing,
+    // but keep a map to restore them later.
+    const urlMap = new Map<string, string>();
+    const cleanedReels = input.reels.map(reel => {
+      const url = new URL(reel);
+      const cleanUrl = `${url.protocol}//${url.hostname}${url.pathname}`;
+      urlMap.set(cleanUrl, reel); // Map clean URL back to original
+      return cleanUrl;
+    });
+
+    const {output} = await prompt({ reels: cleanedReels });
+    
+    if (!output) return { safeReels: [] };
+
+    // Restore original URLs with tracking params
+    const restoredReels = output.safeReels.map(cleanUrl => urlMap.get(cleanUrl) || cleanUrl);
+
+    return { safeReels: restoredReels };
   }
 );
