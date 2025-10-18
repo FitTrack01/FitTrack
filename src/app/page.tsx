@@ -10,20 +10,22 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh bg-background">
-      <header className="p-4 sm:p-6">
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tighter text-primary font-headline">
-          FitTrack
-        </h1>
-        <p className="text-muted-foreground mt-2 text-lg">
-          Your daily fitness companion.
-        </p>
+      <header className="p-4 sm:p-6 flex justify-between items-center">
+        <div>
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground font-headline">
+            FitTrack
+          </h1>
+          <p className="text-muted-foreground mt-2 text-lg">
+            Your daily fitness companion.
+          </p>
+        </div>
       </header>
       <main className="flex-1 px-4 space-y-8">
         <Tabs defaultValue="exercises" className="w-full max-w-2xl mx-auto">
-          <TabsList className="grid w-full grid-cols-3 mb-6">
-            <TabsTrigger value="exercises" className="text-base py-2">Exercises to do</TabsTrigger>
-            <TabsTrigger value="completed" className="text-base py-2">Completed</TabsTrigger>
-            <TabsTrigger value="history" className="text-base py-2">History</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 mb-6 bg-secondary p-2 h-auto rounded-full">
+            <TabsTrigger value="exercises" className="text-base py-2.5 rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg">Exercises to do</TabsTrigger>
+            <TabsTrigger value="completed" className="text-base py-2.5 rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg">Completed</TabsTrigger>
+            <TabsTrigger value="history" className="text-base py-2.5 rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg">History</TabsTrigger>
           </TabsList>
           <TabsContent value="exercises">
             <section id="exercises-to-do">
@@ -37,7 +39,7 @@ export default function Home() {
                         className="group w-full"
                         aria-label={`View exercises for ${part}`}
                       >
-                        <div className="flex items-center justify-between w-full p-6 bg-card rounded-lg shadow-sm border-2 border-card hover:border-primary hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                        <div className="flex items-center justify-between w-full p-6 bg-card rounded-xl shadow-sm border border-border hover:border-primary hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1">
                           <div className="flex items-center gap-4">
                             {Icon && <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />}
                             <span className="text-xl sm:text-2xl font-semibold">{part}</span>
