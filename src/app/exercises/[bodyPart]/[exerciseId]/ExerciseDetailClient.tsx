@@ -46,9 +46,11 @@ export function ExerciseDetailClient({ exercise }: { exercise: Exercise }) {
                 {isDirectVideo ? (
                   <video
                     src={exercise.videoUrl}
-                    controls
                     muted
-                    className="w-full h-full"
+                    autoPlay
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
                     title="Exercise Video"
                   />
                 ) : embedUrl ? (
