@@ -116,6 +116,7 @@ export const exercises: Exercise[] = [
     ],
     reelUrls: [],
     image: 'abdominal-training-image',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/_sixpack%20_excercise%20_workout%20_gym%20_viral%20_instagram%20_fitness%20_instagood%20_viral%20_motivation%20_inst.mp4?updatedAt=1760787788895',
   },
   {
     id: 'overhead-press',
