@@ -102,6 +102,7 @@ export const exercises: Exercise[] = [
     ],
     reelUrls: ['https://www.instagram.com/reel/C2s4Z_fLqG0/', 'https://www.instagram.com/reel/C6QW_R_rT_m/'],
     image: 'bicep-curl-image',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/Master%20bicep%20curls%20technique%20to%20unlock%20peak%20gainsFOLLOW%20FOR%20MKRE%20TUTORIALS!!!_workouts%20_workout%20.mp4?updatedAt=1760788578793',
   },
   {
     id: 'abdominal-training',
