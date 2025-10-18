@@ -47,6 +47,7 @@ export function ExerciseDetailClient({ exercise }: { exercise: Exercise }) {
                   <video
                     src={exercise.videoUrl}
                     controls
+                    muted
                     className="w-full h-full"
                     title="Exercise Video"
                   />
