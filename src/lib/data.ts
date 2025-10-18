@@ -173,6 +173,22 @@ export const exercises: Exercise[] = [
     image: 'shoulder-press-image',
     videoUrl: 'https://ik.imagekit.io/x6cjipsih/_Smith%20Shoulder%20Press-%20Are%20You%20Doing%20This%20Correctly__.mp4?updatedAt=1760788880414',
   },
+  {
+    id: 'traps',
+    name: 'Traps',
+    bodyPart: 'Shoulders',
+    sets: 3,
+    reps: '12-15',
+    instructions: [
+        'Stand holding dumbbells at your sides, palms facing your body.',
+        'Lift your shoulders straight up towards your ears.',
+        'Hold the peak contraction for a moment.',
+        'Slowly lower the dumbbells back to the starting position.',
+    ],
+    reelUrls: [],
+    image: 'traps-image',
+    videoUrl: 'https://ik.imagekit.io/x6cjipsih/_Safe%20&%20Strong-%20How%20to%20Train%20Traps%20the%20Right%20Way__.mp4?updatedAt=1760789781900',
+  },
 ];
 
 export function getExercisesByBodyPart(bodyPart: BodyPart): Exercise[] {
