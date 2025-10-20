@@ -30,6 +30,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  assetPrefix: process.env.STUDIO_BASEPATH,
 };
 
 export default nextConfig;
