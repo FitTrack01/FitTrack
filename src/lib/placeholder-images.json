@@ -77,6 +77,78 @@
       "description": "A person doing leg extensions.",
       "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsZWclMjBleHRlbnNpb258ZW58MHx8fHwxNzYwOTAwMDAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "leg extension"
+    },
+    {
+      "id": "dips-image",
+      "description": "A person performing dips",
+      "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkaXBzJTIwZXhlcmNpc2V8ZW58MHx8fHwxNzYxMjQwMDAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dips exercise"
+    },
+    {
+      "id": "pull-up-image",
+      "description": "A person performing a pull-up",
+      "imageUrl": "https://images.unsplash.com/photo-1581009137052-c6513d7831d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwdWxsJTIwdXAlMjBmaXRuZXNzfGVufDB8fHx8MTc2MTI0MDAwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pull-up fitness"
+    },
+    {
+      "id": "bent-over-row-image",
+      "description": "A person performing a bent-over row",
+      "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiZW50JTIwb3ZlciUyMHJvd3xlbnwwfHx8fDE3NjEyNDAwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rowing exercise"
+    },
+    {
+      "id": "leg-press-image",
+      "description": "A person using a leg press machine",
+      "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsZWclMjBwcmVzc3xlbnwwfHx8fDE3NjEyNDAwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leg press"
+    },
+    {
+      "id": "lunges-image",
+      "description": "A person doing lunges",
+      "imageUrl": "https://images.unsplash.com/photo-1539267902239-d1fc8148afa2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwbHVuZ2VzfGVufDB8fHx8MTc2MTI0MDAwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fitness lunges"
+    },
+    {
+      "id": "hammer-curls-image",
+      "description": "A person doing hammer curls",
+      "imageUrl": "https://images.unsplash.com/photo-1704223523183-cc0ef35cb671?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYW1tZXIlMjBjdXJsc3xlbnwwfHx8fDE3NjEyNDAwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hammer curls"
+    },
+    {
+      "id": "tricep-dips-image",
+      "description": "A person doing tricep dips on a bench",
+      "imageUrl": "https://images.unsplash.com/photo-1594882645126-14020914d58d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0cmljZXAlMjBkaXBzfGVufDB8fHx8MTc2MTI0MDAwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tricep dips"
+    },
+    {
+      "id": "plank-image",
+      "description": "A person holding a plank position",
+      "imageUrl": "https://images.unsplash.com/photo-1526401485004-469102124874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwbGFuayUyMGV4ZXJjaXNlfGVufDB8fHx8MTc2MTI0MDAwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "plank exercise"
+    },
+    {
+      "id": "leg-raises-image",
+      "description": "A person doing leg raises",
+      "imageUrl": "https://images.unsplash.com/photo-1526401485004-469102124874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsZWclMjByYWlzZXMlMjBmaXRuZXNzfGVufDB8fHx8MTc2MTI0MDAwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leg raises"
+    },
+    {
+      "id": "russian-twists-image",
+      "description": "A person doing russian twists",
+      "imageUrl": "https://images.unsplash.com/photo-1526401485004-469102124874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxydXNzaWFuJTIwdHdpc3RzfGVufDB8fHx8MTc2MTI0MDAwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "russian twists"
+    },
+    {
+      "id": "lateral-raises-image",
+      "description": "A person doing lateral raises",
+      "imageUrl": "https://images.unsplash.com/photo-1599422588380-f3a189c4d9f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYXRlcmFsJTIwcmFpc2VzfGVufDB8fHx8MTc2MTI0MDAwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lateral raises"
+    },
+    {
+      "id": "front-raises-image",
+      "description": "A person doing front raises",
+      "imageUrl": "https://images.unsplash.com/photo-1599422588380-f3a189c4d9f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmcm9udCUyMHJhaXNlc3xlbnwwfHx8fDE3NjEyNDAwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "front raises"
     }
   ]
 }

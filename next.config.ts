@@ -31,6 +31,7 @@ const nextConfig: NextConfig = {
     ],
   },
   assetPrefix: process.env.STUDIO_BASEPATH,
+  output: 'standalone',
 };
 
 export default nextConfig;

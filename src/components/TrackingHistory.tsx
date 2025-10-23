@@ -2,7 +2,7 @@
 
 import { useExerciseLog } from "@/hooks/use-exercise-log";
 import { exercises } from "@/lib/data";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { format, parseISO, compareDesc } from "date-fns";
 
 export function TrackingHistory() {
@@ -19,7 +19,10 @@ export function TrackingHistory() {
   if (!isLoaded) {
     return (
       <Card>
-        <CardContent className="p-6">
+        <CardHeader>
+            <CardTitle>Your Activity</CardTitle>
+        </CardHeader>
+        <CardContent>
           <p className="text-muted-foreground">Loading history...</p>
         </CardContent>
       </Card>
@@ -29,7 +32,11 @@ export function TrackingHistory() {
   if (completedExercises.length === 0) {
     return (
       <Card>
-        <CardContent className="p-6 text-center">
+        <CardHeader>
+            <CardTitle>Your Activity</CardTitle>
+            <CardDescription>Your completed exercises will appear here.</CardDescription>
+        </CardHeader>
+        <CardContent className="text-center py-10">
           <p className="text-muted-foreground">No completed exercises yet.</p>
         </CardContent>
       </Card>
@@ -40,6 +47,7 @@ export function TrackingHistory() {
     <Card>
       <CardHeader>
         <CardTitle>Your Activity</CardTitle>
+        <CardDescription>A complete history of your completed workouts.</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">

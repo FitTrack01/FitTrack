@@ -29,7 +29,7 @@ export default function ExerciseListPage({ params }: Props) {
     <div className="flex flex-col min-h-dvh bg-background">
       <header className="p-4 flex items-center gap-4 sticky top-0 bg-background/80 backdrop-blur-sm z-10 border-b">
         <Button asChild variant="outline" size="icon">
-          <Link href="/" aria-label="Back to homepage">
+          <Link href="/manual" aria-label="Back to manual workout">
             <ArrowLeft className="h-5 w-5" />
           </Link>
         </Button>
