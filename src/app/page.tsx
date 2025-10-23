@@ -40,7 +40,7 @@ export default function Home() {
       <main className="flex-1 px-4 sm:px-6 py-8">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-1 gap-6">
            {features.map((feature) => (
-            <Link href={feature.href} key={feature.title} className="group">
+            <Link href={feature.href} key={feature.title} className="group" prefetch={true}>
               <Card className="h-full hover:bg-card-foreground/5 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl border">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
                   <CardTitle className="text-2xl font-bold">{feature.title}</CardTitle>
