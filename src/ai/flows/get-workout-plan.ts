@@ -9,7 +9,7 @@
  */
 
 import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
+import { z } from 'zod';
 import { exercises } from '@/lib/data';
 import type { BodyPart } from '@/lib/types';
 
@@ -58,9 +58,10 @@ User Information:
 
 Your Task:
 Create a balanced 3-day workout plan using ONLY the exercises from the list below.
-- For a goal of "lose_weight", focus on full-body workouts with a mix of compound exercises.
-- For a goal of "build_muscle", create a split routine (e.g., Push/Pull/Legs or Upper/Lower/Full).
-- For a goal of "improve_fitness", provide a balanced full-body routine.
+Your instructions for each goal are:
+- When the user's goal is 'lose_weight', focus on full-body workouts with a mix of compound exercises.
+- When the user's goal is 'build_muscle', create a split routine (e.g., Push/Pull/Legs or Upper/Lower/Full).
+- When the user's goal is 'improve_fitness', provide a balanced 3-day full-body routine with a variety of exercises targeting different muscle groups each day.
 
 Select 4-5 exercises for each day. Ensure the exercise IDs you return are valid and exist in the provided list.
 For each exercise in the plan, you MUST provide the correct 'id', 'name', 'bodyPart', 'sets', and 'reps' from the list.
