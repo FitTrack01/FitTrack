@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -19,7 +19,8 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { getWorkoutPlan } from '@/ai/flows/get-workout-plan';
 import type { WorkoutPlan } from '@/ai/flows/get-workout-plan';
-import { Loader2 } from 'lucide-react';
+import { useWorkoutPlan } from '@/hooks/use-workout-plan';
+import { Loader2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const formSchema = z.object({
@@ -32,8 +33,15 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 export function WorkoutPlanForm() {
+  const {
+    activePlan,
+    isLoaded,
+    savePlan,
+    clearPlan,
+    currentDayIndex,
+  } = useWorkoutPlan();
+
   const [bmi, setBmi] = useState<number | null>(null);
-  const [workoutPlan, setWorkoutPlan] = useState<WorkoutPlan | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -52,14 +60,11 @@ export function WorkoutPlanForm() {
   async function onSubmit(values: FormValues) {
     setIsLoading(true);
     setError(null);
-    setWorkoutPlan(null);
 
     let calculatedBmi;
     if (values.unit === 'metric') {
-      // Weight (kg) / Height (m)^2
       calculatedBmi = values.weight / (values.height / 100) ** 2;
     } else {
-      // (Weight (lbs) / Height (in)^2) * 703
       calculatedBmi = (values.weight / values.height ** 2) * 703;
     }
     setBmi(calculatedBmi);
@@ -69,7 +74,7 @@ export function WorkoutPlanForm() {
         bmi: calculatedBmi,
         goal: values.goal,
       });
-      setWorkoutPlan(plan);
+      savePlan(plan);
     } catch (e) {
       console.error(e);
       setError('Sorry, I was unable to generate a workout plan. Please try again.');
@@ -77,6 +82,66 @@ export function WorkoutPlanForm() {
       setIsLoading(false);
     }
   }
+
+  const handleStopPlan = () => {
+    clearPlan();
+  };
+
+  if (!isLoaded) {
+    return (
+      <Card>
+        <CardContent className="p-6">
+          <div className="flex items-center justify-center">
+            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (activePlan) {
+    const currentDayWorkout = activePlan.days[currentDayIndex % activePlan.days.length];
+    const dayNumber = (currentDayIndex % activePlan.days.length) + 1;
+
+    return (
+       <Card>
+        <CardHeader>
+          <CardTitle>Your Active Workout Plan</CardTitle>
+          <CardDescription>{activePlan.summary}</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div>
+            <h3 className="font-bold text-xl mb-4">{`Day ${dayNumber}: ${currentDayWorkout.day}`}</h3>
+            <ul className="space-y-2">
+              {currentDayWorkout.exercises.map((ex) => (
+                <li key={ex.id} className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                   <div className="flex-1">
+                      <p className="font-semibold text-lg">{ex.name}</p>
+                      <p className="text-sm text-muted-foreground">{ex.sets} sets of {ex.reps} reps</p>
+                   </div>
+                   <Button asChild variant="ghost" size="icon">
+                      <Link href={`/exercises/${ex.bodyPart.toLowerCase()}/${ex.id}`}>
+                        <ArrowRight className="h-5 w-5" />
+                        <span className="sr-only">View Exercise</span>
+                      </Link>
+                   </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="border-t pt-6 flex flex-col sm:flex-row gap-2">
+             <Button onClick={handleStopPlan} variant="destructive" className="w-full">
+               Stop Workout Plan
+             </Button>
+             <Button onClick={handleStopPlan} variant="outline" className="w-full">
+               Change Workout Plan
+             </Button>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
 
   return (
     <div className="space-y-8">
@@ -126,7 +191,7 @@ export function WorkoutPlanForm() {
                     <FormItem>
                       <FormLabel>Height ({unit === 'metric' ? 'cm' : 'in'})</FormLabel>
                       <FormControl>
-                        <Input type="number" placeholder="e.g., 180" {...field} />
+                        <Input type="number" placeholder="e.g., 180" {...field} value={field.value ?? ''} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -139,7 +204,7 @@ export function WorkoutPlanForm() {
                     <FormItem>
                       <FormLabel>Weight ({unit === 'metric' ? 'kg' : 'lbs'})</FormLabel>
                       <FormControl>
-                        <Input type="number" placeholder="e.g., 75" {...field} />
+                        <Input type="number" placeholder="e.g., 75" {...field} value={field.value ?? ''} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -206,47 +271,6 @@ export function WorkoutPlanForm() {
           </CardHeader>
           <CardContent>
             <p>{error}</p>
-          </CardContent>
-        </Card>
-      )}
-
-      {bmi && !workoutPlan && !isLoading && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Your BMI</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-3xl font-bold">{bmi.toFixed(1)}</p>
-          </CardContent>
-        </Card>
-      )}
-
-      {workoutPlan && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Your Personalized Workout Plan</CardTitle>
-            {bmi && <CardDescription>Your BMI is {bmi.toFixed(1)}</CardDescription>}
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <p className="italic text-muted-foreground">{workoutPlan.summary}</p>
-            {workoutPlan.days.map((day, index) => (
-              <div key={index} className="border-t pt-4 first:border-t-0">
-                <h3 className="font-bold text-lg mb-2">{day.day}</h3>
-                <ul className="space-y-2">
-                  {day.exercises.map((ex) => (
-                    <li key={ex.id} className="flex items-center justify-between p-3 bg-muted/50 rounded-md">
-                       <div className="flex-1">
-                          <p className="font-semibold">{ex.name}</p>
-                          <p className="text-sm text-muted-foreground">{ex.sets} sets of {ex.reps} reps</p>
-                       </div>
-                       <Button asChild variant="ghost" size="sm">
-                          <Link href={`/exercises/${ex.bodyPart.toLowerCase()}/${ex.id}`}>View</Link>
-                       </Button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </CardContent>
         </Card>
       )}
