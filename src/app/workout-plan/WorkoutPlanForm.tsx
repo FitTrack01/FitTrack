@@ -40,6 +40,8 @@ export function WorkoutPlanForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      height: '' as any,
+      weight: '' as any,
       unit: 'metric',
       goal: 'improve_fitness',
     },
