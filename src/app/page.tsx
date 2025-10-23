@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Dumbbell, LineChart, BookOpen, ArrowRight } from 'lucide-react';
 import { NotificationButton } from '@/components/NotificationButton';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ThemeToggleButton } from '@/components/ThemeToggleButton';
 
 export default function Home() {
   const features = [
@@ -55,8 +56,11 @@ export default function Home() {
           ))}
         </div>
       </main>
-      <footer className="py-6 px-4 text-center text-sm text-muted-foreground border-t">
-        <NotificationButton />
+      <footer className="py-6 px-4 text-center text-sm text-muted-foreground border-t space-y-4">
+        <div className="flex justify-center items-center gap-4">
+          <NotificationButton />
+          <ThemeToggleButton />
+        </div>
         <p className="mt-4">Built for your fitness journey.</p>
       </footer>
     </div>
