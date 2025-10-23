@@ -58,9 +58,9 @@ User Information:
 
 Your Task:
 Create a balanced 3-day workout plan using ONLY the exercises from the list below.
-- For "lose_weight", focus on full-body workouts with a mix of compound exercises.
-- For "build_muscle", create a split routine (e.g., Push/Pull/Legs or Upper/Lower/Full).
-- For "improve_fitness", provide a balanced full-body routine.
+- For a goal of "lose_weight", focus on full-body workouts with a mix of compound exercises.
+- For a goal of "build_muscle", create a split routine (e.g., Push/Pull/Legs or Upper/Lower/Full).
+- For a goal of "improve_fitness", provide a balanced full-body routine.
 
 Select 4-5 exercises for each day. Ensure the exercise IDs you return are valid and exist in the provided list.
 For each exercise in the plan, you MUST provide the correct 'id', 'name', 'bodyPart', 'sets', and 'reps' from the list.
