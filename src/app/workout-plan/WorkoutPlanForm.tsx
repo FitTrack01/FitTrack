@@ -208,7 +208,7 @@ export function WorkoutPlanForm() {
         </Card>
       )}
 
-      {bmi && (
+      {bmi && !workoutPlan && !isLoading && (
         <Card>
           <CardHeader>
             <CardTitle>Your BMI</CardTitle>
@@ -223,16 +223,20 @@ export function WorkoutPlanForm() {
         <Card>
           <CardHeader>
             <CardTitle>Your Personalized Workout Plan</CardTitle>
+            {bmi && <CardDescription>Your BMI is {bmi.toFixed(1)}</CardDescription>}
           </CardHeader>
           <CardContent className="space-y-6">
-            <p>{workoutPlan.summary}</p>
+            <p className="italic text-muted-foreground">{workoutPlan.summary}</p>
             {workoutPlan.days.map((day, index) => (
-              <div key={index} className="border-t pt-4">
+              <div key={index} className="border-t pt-4 first:border-t-0">
                 <h3 className="font-bold text-lg mb-2">{day.day}</h3>
                 <ul className="space-y-2">
                   {day.exercises.map((ex) => (
                     <li key={ex.id} className="flex items-center justify-between p-3 bg-muted/50 rounded-md">
-                       <span>{ex.name}</span>
+                       <div className="flex-1">
+                          <p className="font-semibold">{ex.name}</p>
+                          <p className="text-sm text-muted-foreground">{ex.sets} sets of {ex.reps} reps</p>
+                       </div>
                        <Button asChild variant="ghost" size="sm">
                           <Link href={`/exercises/${ex.bodyPart.toLowerCase()}/${ex.id}`}>View</Link>
                        </Button>

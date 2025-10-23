@@ -31,7 +31,9 @@ const WorkoutPlanSchema = z.object({
     exercises: z.array(z.object({
         id: ExerciseIdEnum.describe("The unique ID of the exercise."),
         name: z.string().describe("The name of the exercise."),
-        bodyPart: z.string().describe("The body part the exercise targets.")
+        bodyPart: z.string().describe("The body part the exercise targets."),
+        sets: z.number().describe("The number of sets for the exercise."),
+        reps: z.string().describe("The number of reps for the exercise."),
     })).describe('A list of exercises for this day.'),
   })).describe('A list of workout days.'),
 });
@@ -42,7 +44,7 @@ export async function getWorkoutPlan(input: GetWorkoutPlanInput): Promise<Workou
 }
 
 // Pass the list of available exercises to the prompt
-const exerciseListForPrompt = exercises.map(e => `- ${e.id} (${e.name}, targets: ${e.bodyPart})`).join('\n');
+const exerciseListForPrompt = exercises.map(e => `- ${e.id} (Name: ${e.name}, Targets: ${e.bodyPart}, Sets: ${e.sets}, Reps: ${e.reps})`).join('\n');
 
 const prompt = ai.definePrompt({
   name: 'getWorkoutPlanPrompt',
@@ -61,7 +63,7 @@ Create a balanced 3-day workout plan using ONLY the exercises from the list belo
 - For "improve_fitness", provide a balanced full-body routine.
 
 Select 4-5 exercises for each day. Ensure the exercise IDs you return are valid and exist in the provided list.
-For each exercise in the plan, you MUST provide the correct 'id', 'name', and 'bodyPart' from the list.
+For each exercise in the plan, you MUST provide the correct 'id', 'name', 'bodyPart', 'sets', and 'reps' from the list.
 
 Provide a brief, encouraging summary for the user about their new plan.
 
@@ -84,7 +86,7 @@ const getWorkoutPlanFlow = ai.defineFlow(
       throw new Error("Failed to generate a workout plan.");
     }
     
-    // Validate that the returned exercise IDs are correct and add the bodyPart
+    // Validate that the returned exercise IDs are correct and add/reinforce data from the source of truth
     const validatedDays = output.days.map(day => {
         const validatedExercises = day.exercises.map(ex => {
             const originalExercise = exercises.find(e => e.id === ex.id);
@@ -92,12 +94,15 @@ const getWorkoutPlanFlow = ai.defineFlow(
                 // The AI might hallucinate. It's better to filter this out than to fail.
                 return null;
             }
+            // Return a complete, validated exercise object from our data
             return { 
                 id: originalExercise.id,
                 name: originalExercise.name,
-                bodyPart: originalExercise.bodyPart as BodyPart
+                bodyPart: originalExercise.bodyPart as BodyPart,
+                sets: originalExercise.sets,
+                reps: originalExercise.reps,
             };
-        }).filter((ex): ex is {id: string; name: string; bodyPart: BodyPart} => ex !== null);
+        }).filter((ex): ex is {id: string; name: string; bodyPart: BodyPart; sets: number; reps: string} => ex !== null);
 
         return { ...day, exercises: validatedExercises };
     });
