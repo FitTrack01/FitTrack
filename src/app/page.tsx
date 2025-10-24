@@ -3,6 +3,7 @@ import { Dumbbell, LineChart, BookOpen, ArrowRight } from 'lucide-react';
 import { NotificationButton } from '@/components/NotificationButton';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ThemeToggleButton } from '@/components/ThemeToggleButton';
+import { UserAuth } from '@/components/UserAuth';
 
 export default function Home() {
   const features = [
@@ -37,6 +38,7 @@ export default function Home() {
             Your daily fitness companion.
           </p>
         </div>
+        <UserAuth />
       </header>
       <main className="flex-1 px-4 sm:px-6 py-8">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-1 gap-6">
