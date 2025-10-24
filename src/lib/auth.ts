@@ -14,21 +14,11 @@ export async function signInWithGoogle(auth: Auth) {
     const user = result.user;
     return { user, token };
   } catch (error: any) {
-    // Only log detailed error if it's a Firebase error with expected properties
-    if (error.code && error.message) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.customData?.email;
-      // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      console.error("Google Sign-In Error:", { errorCode, errorMessage, email, credential });
-    } else {
-      // Log a generic error if the error object is not as expected,
-      // which can happen if the popup is closed by the user.
-      console.error("An unexpected error occurred during Google Sign-In.", error);
-    }
-    // Re-throw the error to be handled by the calling component
+    // This block handles various sign-in errors, including when the user closes the popup.
+    // Logging the entire error is safer than assuming a specific structure.
+    console.error("An error occurred during Google Sign-In:", error);
+    
+    // Re-throw the error to allow the calling component to handle the UI state if needed.
     throw error;
   }
 }
