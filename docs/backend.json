@@ -1,0 +1,121 @@
+{
+  "entities": {
+    "Exercise": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Exercise",
+      "type": "object",
+      "description": "Represents an exercise within the FitFlow application.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the exercise."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the exercise."
+        },
+        "bodyPart": {
+          "type": "string",
+          "description": "The body part this exercise targets."
+        },
+        "instructions": {
+          "type": "string",
+          "description": "Step-by-step instructions for performing the exercise."
+        },
+        "videoUrl": {
+          "type": "string",
+          "description": "URL of the video demonstrating the exercise.",
+          "format": "uri"
+        },
+        "instagramReelUrl": {
+          "type": "string",
+          "description": "URL of a related Instagram Reel for visual guidance.",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "bodyPart",
+        "instructions"
+      ]
+    },
+    "UserExerciseCompletion": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserExerciseCompletion",
+      "type": "object",
+      "description": "Represents the completion status of an exercise for a user.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user exercise completion status."
+        },
+        "exerciseId": {
+          "type": "string",
+          "description": "Reference to the Exercise. (Relationship: Exercise 1:N UserExerciseCompletion)"
+        },
+        "isCompleted": {
+          "type": "boolean",
+          "description": "Indicates whether the exercise is completed by the user."
+        },
+        "completionDate": {
+          "type": "string",
+          "description": "The date and time the exercise was completed.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "exerciseId",
+        "isCompleted"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/exercises/{exerciseId}",
+        "definition": {
+          "entityName": "Exercise",
+          "schema": {
+            "$ref": "#/backend/entities/Exercise"
+          },
+          "description": "Stores the global list of exercises available in the application.",
+          "params": [
+            {
+              "name": "exerciseId",
+              "description": "The unique identifier for the exercise."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/exerciseCompletions/{completionId}",
+        "definition": {
+          "entityName": "UserExerciseCompletion",
+          "schema": {
+            "$ref": "#/backend/entities/UserExerciseCompletion"
+          },
+          "description": "Stores user-specific exercise completion data. Path-based ownership ensures only the user can access their own completion records.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            },
+            {
+              "name": "completionId",
+              "description": "The unique identifier for the user exercise completion status."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to ensure authorization independence, clarity, and scalability. It leverages path-based ownership for user-specific data and segregates data types into distinct collections to simplify security rules.\n\n1.  **Authorization Independence:** The `userExerciseCompletions` subcollection denormalizes the user-exercise relationship by being nested under `/users/{userId}`. This eliminates the need for `get()` calls in security rules to verify ownership, as the path itself establishes the relationship. This ensures that creation and modification of completion records are atomic and independent of other data.\n\n2.  **Clarity of Intent:** The structure clearly separates user-specific exercise completions from global exercise data. The paths `/users/{userId}/exerciseCompletions/{completionId}` explicitly represent the relationship between users and their exercise completion records.\n\n3.  **QAPs Support:**\n    *   Secure `list` operations for user exercise completions are enabled by the path-based ownership structure. Rules can easily restrict access to a user's own exercise completions based on the `userId` in the path, preventing unauthorized listing of other users' data.\n    *   Global exercises can be securely listed, as they reside in a separate collection (`/exercises`) with potentially different security rules.\n\n4.  **Invariants:** The structure supports maintaining the integrity of ownership and timestamps. Ownership is enforced by the path structure, and timestamps (within `UserExerciseCompletion`) can be validated in security rules."
+  }
+}
